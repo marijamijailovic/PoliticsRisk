@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/marija/fakultet/RS2/SoftwareDevelopment_project/PoliticsRisk/PoliticsRisk.csproj",
+      "projectUniqueName": "/home/marija/fakultet/RS2/PoliticsRisk/PoliticsRisk.csproj",
       "projectName": "PoliticsRisk",
-      "projectPath": "/home/marija/fakultet/RS2/SoftwareDevelopment_project/PoliticsRisk/PoliticsRisk.csproj",
+      "projectPath": "/home/marija/fakultet/RS2/PoliticsRisk/PoliticsRisk.csproj",
       "packagesPath": "/home/marija/.nuget/packages/",
-      "outputPath": "/home/marija/fakultet/RS2/SoftwareDevelopment_project/PoliticsRisk/obj/",
+      "outputPath": "/home/marija/fakultet/RS2/PoliticsRisk/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
