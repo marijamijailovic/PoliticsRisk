@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@aspnet/signalr": "^1.1.4"
+    "@aspnet/signalr": "^1.1.4",
+    "fusioncharts": "^3.14.1",
+    "fusionmaps": "^3.14.0-sr.1"
   },
   "devDependencies": {},
   "scripts": {

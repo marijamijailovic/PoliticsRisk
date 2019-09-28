@@ -1,6 +1,18 @@
 @page
 
 <div>
-    <a href="GameChat">Go to game chat</a>
+    <div class="col-md-4">
+    <textarea name="message" id="messageInput"></textarea> <br />
+    <select id="group">
+        <option value="All">Everyone</option>
+        <option value="Myself">Myself</option>
+        <option value="PrivateGroup">Private Group</option>
+    </select> <br />
+    <input type="button" id="sendButton" value="Send Message"/> <br />
+
+    <div id="messages"></div>
+
+    <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/message.js"></script>
     <a href="GameMaps">Go to choose map for game</a>
 </div>

@@ -1,3 +1,78 @@
 @page
 
-<a href="GameMenu">Go back</a>
+<html>
+<head>
+    <title>My First map using FusionCharts Suite XT</title>
+    <!--<script src="@Url.Content("//Scripts/fusioncharts/fusioncharts.js")></script>-->
+    <!-- Including the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Including the map renderer file -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.maps.js "></script>
+    <!-- Including the map definition file -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.world.js"></script>
+    <!-- Including the fusion theme -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript">
+        var worldMap = new FusionCharts({
+                "type": "maps/world",
+                "renderAt": "chart-container",
+                "width": "1200",
+                "height": "550",
+                "dataFormat": "json"
+        });
+        var serbiaMap = new FusionCharts({
+            "type": "maps/serbia",
+            "renderAt": "chart-container",
+            "width": "1200",
+            "height": "550",
+            "dataFormat": "json"
+        });
+        var europeMap = new FusionCharts({
+            "type": "maps/europe",
+            "renderAt": "chart-container",
+            "width": "1200",
+            "height": "550",
+            "dataFormat": "json"
+        });
+
+        var map_to_render = "";
+
+        function displayMap() { 
+            var el = document.getElementsByName('map'); 
+            
+            for(i = 0; i < el.length; i++) { 
+                if(el[i].checked) {
+                    map_to_render = el[i].value;
+                    
+                    FusionCharts.ready(function() {
+            
+                        console.log('Vidimo li ovde ', map_to_render)    
+
+                        if(map_to_render === "world"){
+                            worldMap.render();
+                        }
+                        else if(map_to_render === "europe"){
+                            europeMap.render();
+                        }
+                        else if(map_to_render === "serbia"){                        
+                            serbiaMap.render();
+                        } 
+                    });
+                    console.log('Izabran' , el_value);
+                }
+            } 
+        }
+    </script>
+</head>
+
+<body>
+    <h1>If you want to play choose map</h1>
+    <input type="radio" name="map" id="world" value="world">World<br />
+    <input type="radio" name="map" id="europe" value="europe">Europe<br />
+    <input type="radio" name="map" id="serbia" value="serbia">Serbia<br />
+
+    <button type="button" onclick="displayMap()"> Let's play </button> 
+    <div id="chart-container"></div>
+    <a href="GameMenu">Go back</a>
+</body>
+</html>
