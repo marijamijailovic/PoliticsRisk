@@ -9,7 +9,7 @@ namespace PoliticsRisk
     {
         public Task SendMessageToAll(string message)
         {
-            return Clients.All.SendAsync("ReciveMessage", message);
+            return Clients.All.SendAsync("ReceiveMessage", message);
         }
     }
 }
