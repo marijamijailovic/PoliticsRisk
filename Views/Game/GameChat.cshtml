@@ -1,20 +1,37 @@
 @page
 
-<div class="col-md-4">
-<textarea name="message" id="messageInput"></textarea>
-<select id="group">
-    <option value="All">Everyone</option>
-    <option value="Myself">Myself</option>
-    <option value="PrivateGroup">Private Group</option>
-</select>
-<input type="button" id="sendButton" value="Send Message"/>
+@inject UserManager<IdentityUser> UserManager
 
-<div id="messages"></div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/game.css">
+</head>
 
+<body>
+    <h1>Welcome to Chat</h1>
+    <div class="my-game-chat">
+        <p>Player: <input type="text" id="playerInput" value="@UserManager.GetUserName(User)" readonly/> </p>
+        <div class="options-div">
+            <p>Here you can select who will be able to see your messages: </p>
+            <select id="group">
+                <option value="All">Everyone</option>
+                <option value="PrivateGroup">Private Group</option>
+            </select>
+        </div>
+        <div class="my-message-div">
+        <textarea name="message" id="messageInput" placeholder="Type in your message"></textarea>
+        <button class="w3-xlarge" id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        </div>
+
+        <div id="messages" class="messages-div"></div>
+    </div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/message.js"></script>
 
 
-<a href="GameMenu">Go back</a>
+<a asp-controller="Game" asp-action="GameMenu">Go back</a>
 
 </div>
+</body>

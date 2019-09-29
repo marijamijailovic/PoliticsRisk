@@ -91,6 +91,7 @@ namespace PoliticsRisk
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHub<GameHub>("gameHub");
                 endpoints.MapHub<MessageHub>("/messageHub");
             });
 

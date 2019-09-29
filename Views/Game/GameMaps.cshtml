@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>My First map using FusionCharts Suite XT</title>
+    <title>Game Map</title>
     <!--<script src="@Url.Content("//Scripts/fusioncharts/fusioncharts.js")></script>-->
     <!-- Including the fusioncharts core library -->
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
@@ -27,6 +27,13 @@
             "height": "550",
             "dataFormat": "json"
         });
+        var montenegroMap = new FusionCharts({
+            "type": "maps/montenegro",
+            "renderAt": "chart-container",
+            "width": "1200",
+            "height": "550",
+            "dataFormat": "json"
+        });
         var europeMap = new FusionCharts({
             "type": "maps/europe",
             "renderAt": "chart-container",
@@ -45,9 +52,6 @@
                     map_to_render = el[i].value;
                     
                     FusionCharts.ready(function() {
-            
-                        console.log('Vidimo li ovde ', map_to_render)    
-
                         if(map_to_render === "world"){
                             worldMap.render();
                         }
@@ -57,8 +61,10 @@
                         else if(map_to_render === "serbia"){                        
                             serbiaMap.render();
                         } 
+                        else if(map_to_render === "montenegro"){                        
+                            montenegroMap.render();
+                        } 
                     });
-                    console.log('Izabran' , el_value);
                 }
             } 
         }
@@ -70,7 +76,8 @@
     <input type="radio" name="map" id="world" value="world">World<br />
     <input type="radio" name="map" id="europe" value="europe">Europe<br />
     <input type="radio" name="map" id="serbia" value="serbia">Serbia<br />
-
+    <input type="radio" name="map" id="serbia" value="montenegro">Montenegro<br />
+    
     <button type="button" onclick="displayMap()"> Let's play </button> 
     <div id="chart-container"></div>
     <a href="GameMenu">Go back</a>

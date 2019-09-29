@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PoliticsRisk.Controllers{
     public class GameController : Controller{
+
         public ViewResult GameMenu(){
             return View();
         }

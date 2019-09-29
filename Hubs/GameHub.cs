@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace PoliticsRisk
 {
-    public class MessageHub : Hub
+    public class GameHub : Hub
     {
-        public Task SendMessageToAll(string player, string message)
+        public Task ShowAllOnlinePlayers(string player)
         {
-            return Clients.All.SendAsync("ReceiveMessage",player, message);
+            return Clients.All.SendAsync("List of online player", player);
         }
     }
 }
